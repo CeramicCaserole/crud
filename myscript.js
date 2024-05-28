@@ -1,4 +1,4 @@
-var rollV, nameV, genderV, addressV, emailV;
+var rollV, firstnameV, lastnameV, addressV, emailV;
 
 function readFom() {
   rollV = document.getElementById("roll").value;
