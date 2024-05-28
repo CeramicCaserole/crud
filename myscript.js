@@ -2,8 +2,8 @@ var rollV, nameV, genderV, addressV, emailV;
 
 function readFom() {
   rollV = document.getElementById("roll").value;
-  nameV = document.getElementById("name").value;
-  genderV = document.getElementById("gender").value;
+  firstnameV = document.getElementById("firstname").value;
+  lastnameV = document.getElementById("lastname").value;
   addressV = document.getElementById("address").value;
   emailV = document.getElementById("email").value;
   Swal.fire("Data Read Succesfully!");
@@ -25,8 +25,8 @@ document.getElementById("insert").onclick = function () {
     });
     Swal.fire("Data Inserted Succesfully!");
   document.getElementById("roll").value = "";
-  document.getElementById("name").value = "";
-  document.getElementById("gender").value = "";
+  document.getElementById("firstname").value = "";
+  document.getElementById("lastname").value = "";
   document.getElementById("address").value = "";
   document.getElementById("email").value = "";
 };
@@ -39,8 +39,8 @@ document.getElementById("read").onclick = function () {
     .ref("student/" + rollV)
     .on("value", function (snap) {
       document.getElementById("roll").value = snap.val().rollNo;
-      document.getElementById("name").value = snap.val().name;
-      document.getElementById("gender").value = snap.val().gender;
+      document.getElementById("firstname").value = snap.val().name;
+      document.getElementById("lastname").value = snap.val().gender;
       document.getElementById("address").value = snap.val().address;
       document.getElementById("email").value = snap.val().email;
     });
@@ -61,8 +61,8 @@ document.getElementById("update").onclick = function () {
     });
     Swal.fire("Data Updated Succesfully!");
   document.getElementById("roll").value = "";
-  document.getElementById("name").value = "";
-  document.getElementById("gender").value = "";
+  document.getElementById("firstname").value = "";
+  document.getElementById("lastname").value = "";
   document.getElementById("address").value = "";
   document.getElementById("email").value = "";
 };
@@ -75,8 +75,8 @@ document.getElementById("delete").onclick = function () {
     .remove();
     Swal.fire("Data Deleted Succesfully!");
   document.getElementById("roll").value = "";
-  document.getElementById("name").value = "";
-  document.getElementById("gender").value = "";
+  document.getElementById("firstname").value = "";
+  document.getElementById("lastname").value = "";
   document.getElementById("address").value = "";
   document.getElementById("email").value = "";
 };
