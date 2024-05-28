@@ -18,8 +18,8 @@ document.getElementById("insert").onclick = function () {
     .ref("student/" + rollV)
     .set({
       rollNo: rollV,
-      name: nameV,
-      gender: genderV,
+      firstname: firstnameV,
+      lastname: lastnameV,
       address: addressV,
       email: emailV
     });
@@ -54,8 +54,8 @@ document.getElementById("update").onclick = function () {
     .ref("student/" + rollV)
     .update({
       //   rollNo: rollV,
-      name: nameV,
-      gender: genderV,
+      firstname: firstnameV,
+      lastname: lastnameV,
       address: addressV,
       email: emailV
     });
