@@ -22,7 +22,8 @@ document.getElementById("insert").onclick = function () {
       firstname: firstnameV,
       lastname: lastnameV,
       address: addressV,
-      email: emailV
+      email: emailV,
+      nickname: nicknameV
     });
     Swal.fire("Data Inserted Succesfully!");
   document.getElementById("roll").value = "";
