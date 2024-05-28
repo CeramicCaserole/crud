@@ -7,7 +7,7 @@ function readFom() {
   addressV = document.getElementById("address").value;
   emailV = document.getElementById("email").value;
   Swal.fire("Data Read Succesfully!");
-  console.log(rollV, nameV, addressV, genderV);
+  console.log(rollV, firstnameV, addressV, lastnameV);
 }
 
 document.getElementById("insert").onclick = function () {
@@ -39,8 +39,8 @@ document.getElementById("read").onclick = function () {
     .ref("student/" + rollV)
     .on("value", function (snap) {
       document.getElementById("roll").value = snap.val().rollNo;
-      document.getElementById("firstname").value = snap.val().name;
-      document.getElementById("lastname").value = snap.val().gender;
+      document.getElementById("firstname").value = snap.val().firstname;
+      document.getElementById("lastname").value = snap.val().lastname;
       document.getElementById("address").value = snap.val().address;
       document.getElementById("email").value = snap.val().email;
     });
