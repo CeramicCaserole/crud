@@ -1,4 +1,4 @@
-var rollV, firstnameV, lastnameV, addressV, emailV;
+var rollV, firstnameV, lastnameV, addressV, emailV, nicknameV;
 
 function readFom() {
   rollV = document.getElementById("roll").value;
@@ -6,6 +6,7 @@ function readFom() {
   lastnameV = document.getElementById("lastname").value;
   addressV = document.getElementById("address").value;
   emailV = document.getElementById("email").value;
+  nicknameV = document.getElementById("nickname").value;
   Swal.fire("Data Read Succesfully!");
   console.log(rollV, firstnameV, addressV, lastnameV);
 }
@@ -29,6 +30,7 @@ document.getElementById("insert").onclick = function () {
   document.getElementById("lastname").value = "";
   document.getElementById("address").value = "";
   document.getElementById("email").value = "";
+  document.getElementById("nickname").value = "";
 };
 
 document.getElementById("read").onclick = function () {
@@ -43,6 +45,7 @@ document.getElementById("read").onclick = function () {
       document.getElementById("lastname").value = snap.val().lastname;
       document.getElementById("address").value = snap.val().address;
       document.getElementById("email").value = snap.val().email;
+      document.getElementById("nickname").value = snap.val().nickname;
     });
 };
 
@@ -57,13 +60,15 @@ document.getElementById("update").onclick = function () {
       firstname: firstnameV,
       lastname: lastnameV,
       address: addressV,
-      email: emailV
+      email: emailV,
+      nickname: nicknameV
     });
     Swal.fire("Data Updated Succesfully!");
   document.getElementById("roll").value = "";
   document.getElementById("firstname").value = "";
   document.getElementById("lastname").value = "";
   document.getElementById("address").value = "";
+  document.getElementById("email").value = "";
   document.getElementById("email").value = "";
 };
 document.getElementById("delete").onclick = function () {
@@ -79,4 +84,5 @@ document.getElementById("delete").onclick = function () {
   document.getElementById("lastname").value = "";
   document.getElementById("address").value = "";
   document.getElementById("email").value = "";
+  document.getElementById("nickname").value = "";
 };
