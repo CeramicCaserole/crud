@@ -1,14 +1,14 @@
-var idV, firstnameV, midnameV, addressV, emailV, surnameV;
+var uuidV, firstnameV, midnameV, addressV, emailV, surnameV;
 
 function readFom() {
-  idV = document.getElementById("id").value;
+  uidV = document.getElementById("uid").value;
   firstnameV = document.getElementById("firstname").value;
   midnameV = document.getElementById("midname").value;
   addressV = document.getElementById("address").value;
   emailV = document.getElementById("email").value;
   surnameV = document.getElementById("surname").value;
   Swal.fire("Data Read Succesfully!");
-  console.log(idV, firstnameV, addressV, midnameV);
+  console.log(uidV, firstnameV, addressV, midnameV);
 }
 
 document.getElementById("insert").onclick = function () {
@@ -16,9 +16,9 @@ document.getElementById("insert").onclick = function () {
 
   firebase
     .database()
-    .ref("student/" + idV)
+    .ref("student/" + uidV)
     .set({
-      idNo: idV,
+      idNo: uidV,
       firstname: firstnameV,
       midname: midnameV,
       address: addressV,
@@ -39,7 +39,7 @@ document.getElementById("read").onclick = function () {
 
   firebase
     .database()
-    .ref("student/" + idV)
+    .ref("student/" + uidV)
     .on("value", function (snap) {
       document.getElementById("id").value = snap.val().idNo;
       document.getElementById("firstname").value = snap.val().firstname;
@@ -55,9 +55,9 @@ document.getElementById("update").onclick = function () {
 
   firebase
     .database()
-    .ref("student/" + idV)
+    .ref("student/" + uidV)
     .update({
-      //   idNo: idV,
+      //   idNo: uidV,
       firstname: firstnameV,
       midname: midnameV,
       address: addressV,
@@ -77,7 +77,7 @@ document.getElementById("delete").onclick = function () {
 
   firebase
     .database()
-    .ref("student/" + idV)
+    .ref("student/" + uidV)
     .remove();
     Swal.fire("Data Deleted Succesfully!");
   document.getElementById("id").value = "";
