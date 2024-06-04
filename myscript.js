@@ -1,14 +1,14 @@
-var rollV, firstnameV, midnameV, addressV, emailV, surnameV;
+var idV, firstnameV, midnameV, addressV, emailV, surnameV;
 
 function readFom() {
-  rollV = document.getElementById("roll").value;
+  idV = document.getElementById("id").value;
   firstnameV = document.getElementById("firstname").value;
   midnameV = document.getElementById("midname").value;
   addressV = document.getElementById("address").value;
   emailV = document.getElementById("email").value;
   surnameV = document.getElementById("surname").value;
   Swal.fire("Data Read Succesfully!");
-  console.log(rollV, firstnameV, addressV, midnameV);
+  console.log(idV, firstnameV, addressV, midnameV);
 }
 
 document.getElementById("insert").onclick = function () {
@@ -16,9 +16,9 @@ document.getElementById("insert").onclick = function () {
 
   firebase
     .database()
-    .ref("student/" + rollV)
+    .ref("student/" + idV)
     .set({
-      rollNo: rollV,
+      idNo: idV,
       firstname: firstnameV,
       midname: midnameV,
       address: addressV,
@@ -26,7 +26,7 @@ document.getElementById("insert").onclick = function () {
       surname: surnameV
     });
     Swal.fire("Data Inserted Succesfully!");
-  document.getElementById("roll").value = "";
+  document.getElementById("id").value = "";
   document.getElementById("firstname").value = "";
   document.getElementById("midname").value = "";
   document.getElementById("address").value = "";
@@ -39,9 +39,9 @@ document.getElementById("read").onclick = function () {
 
   firebase
     .database()
-    .ref("student/" + rollV)
+    .ref("student/" + idV)
     .on("value", function (snap) {
-      document.getElementById("roll").value = snap.val().rollNo;
+      document.getElementById("id").value = snap.val().idNo;
       document.getElementById("firstname").value = snap.val().firstname;
       document.getElementById("midname").value = snap.val().midname;
       document.getElementById("address").value = snap.val().address;
@@ -55,9 +55,9 @@ document.getElementById("update").onclick = function () {
 
   firebase
     .database()
-    .ref("student/" + rollV)
+    .ref("student/" + idV)
     .update({
-      //   rollNo: rollV,
+      //   idNo: idV,
       firstname: firstnameV,
       midname: midnameV,
       address: addressV,
@@ -65,7 +65,7 @@ document.getElementById("update").onclick = function () {
       surname: surnameV
     });
     Swal.fire("Data Updated Succesfully!");
-  document.getElementById("roll").value = "";
+  document.getElementById("id").value = "";
   document.getElementById("firstname").value = "";
   document.getElementById("midname").value = "";
   document.getElementById("address").value = "";
@@ -77,10 +77,10 @@ document.getElementById("delete").onclick = function () {
 
   firebase
     .database()
-    .ref("student/" + rollV)
+    .ref("student/" + idV)
     .remove();
     Swal.fire("Data Deleted Succesfully!");
-  document.getElementById("roll").value = "";
+  document.getElementById("id").value = "";
   document.getElementById("firstname").value = "";
   document.getElementById("midname").value = "";
   document.getElementById("address").value = "";
