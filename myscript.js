@@ -1,4 +1,4 @@
-var uuidV, firstnameV, midV, addressV, emailV, surnameV;
+var uidV, firstnameV, midV, addressV, emailV, surnameV;
 
 function readFom() {
   uidV = document.getElementById("uid").value;
