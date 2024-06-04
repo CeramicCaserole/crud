@@ -1,14 +1,14 @@
-var rollV, firstnameV, lastnameV, addressV, emailV, nicknameV;
+var rollV, firstnameV, middlenameV, addressV, emailV, nicknameV;
 
 function readFom() {
   rollV = document.getElementById("roll").value;
   firstnameV = document.getElementById("firstname").value;
-  lastnameV = document.getElementById("lastname").value;
+  middlenameV = document.getElementById("middlename").value;
   addressV = document.getElementById("address").value;
   emailV = document.getElementById("email").value;
   nicknameV = document.getElementById("nickname").value;
   Swal.fire("Data Read Succesfully!");
-  console.log(rollV, firstnameV, addressV, lastnameV);
+  console.log(rollV, firstnameV, addressV, middlenameV);
 }
 
 document.getElementById("insert").onclick = function () {
@@ -20,7 +20,7 @@ document.getElementById("insert").onclick = function () {
     .set({
       rollNo: rollV,
       firstname: firstnameV,
-      lastname: lastnameV,
+      middlename: middlenameV,
       address: addressV,
       email: emailV,
       nickname: nicknameV
@@ -28,7 +28,7 @@ document.getElementById("insert").onclick = function () {
     Swal.fire("Data Inserted Succesfully!");
   document.getElementById("roll").value = "";
   document.getElementById("firstname").value = "";
-  document.getElementById("lastname").value = "";
+  document.getElementById("middlename").value = "";
   document.getElementById("address").value = "";
   document.getElementById("email").value = "";
   document.getElementById("nickname").value = "";
@@ -43,7 +43,7 @@ document.getElementById("read").onclick = function () {
     .on("value", function (snap) {
       document.getElementById("roll").value = snap.val().rollNo;
       document.getElementById("firstname").value = snap.val().firstname;
-      document.getElementById("lastname").value = snap.val().lastname;
+      document.getElementById("middlename").value = snap.val().middlename;
       document.getElementById("address").value = snap.val().address;
       document.getElementById("email").value = snap.val().email;
       document.getElementById("nickname").value = snap.val().nickname;
@@ -59,7 +59,7 @@ document.getElementById("update").onclick = function () {
     .update({
       //   rollNo: rollV,
       firstname: firstnameV,
-      lastname: lastnameV,
+      middlename: middlenameV,
       address: addressV,
       email: emailV,
       nickname: nicknameV
@@ -67,7 +67,7 @@ document.getElementById("update").onclick = function () {
     Swal.fire("Data Updated Succesfully!");
   document.getElementById("roll").value = "";
   document.getElementById("firstname").value = "";
-  document.getElementById("lastname").value = "";
+  document.getElementById("middlename").value = "";
   document.getElementById("address").value = "";
   document.getElementById("email").value = "";
   document.getElementById("email").value = "";
@@ -82,7 +82,7 @@ document.getElementById("delete").onclick = function () {
     Swal.fire("Data Deleted Succesfully!");
   document.getElementById("roll").value = "";
   document.getElementById("firstname").value = "";
-  document.getElementById("lastname").value = "";
+  document.getElementById("middlename").value = "";
   document.getElementById("address").value = "";
   document.getElementById("email").value = "";
   document.getElementById("nickname").value = "";
