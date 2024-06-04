@@ -26,7 +26,7 @@ document.getElementById("insert").onclick = function () {
       surname: surnameV
     });
     Swal.fire("Data Inserted Succesfully!");
-  document.getElementById("id").value = "";
+  document.getElementById("uid").value = "";
   document.getElementById("firstname").value = "";
   document.getElementById("mid").value = "";
   document.getElementById("address").value = "";
@@ -41,7 +41,7 @@ document.getElementById("read").onclick = function () {
     .database()
     .ref("student/" + uidV)
     .on("value", function (snap) {
-      document.getElementById("id").value = snap.val().idNo;
+      document.getElementById("uid").value = snap.val().idNo;
       document.getElementById("firstname").value = snap.val().firstname;
       document.getElementById("mid").value = snap.val().mid;
       document.getElementById("address").value = snap.val().address;
@@ -65,7 +65,7 @@ document.getElementById("update").onclick = function () {
       surname: surnameV
     });
     Swal.fire("Data Updated Succesfully!");
-  document.getElementById("id").value = "";
+  document.getElementById("uid").value = "";
   document.getElementById("firstname").value = "";
   document.getElementById("mid").value = "";
   document.getElementById("address").value = "";
@@ -80,7 +80,7 @@ document.getElementById("delete").onclick = function () {
     .ref("student/" + uidV)
     .remove();
     Swal.fire("Data Deleted Succesfully!");
-  document.getElementById("id").value = "";
+  document.getElementById("uid").value = "";
   document.getElementById("firstname").value = "";
   document.getElementById("mid").value = "";
   document.getElementById("address").value = "";
