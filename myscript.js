@@ -18,7 +18,7 @@ document.getElementById("insert").onclick = function () {
     .database()
     .ref("student/" + uidV)
     .set({
-      idNo: uidV,
+      uid: uidV,
       firstname: firstnameV,
       mid: midV,
       address: addressV,
@@ -41,7 +41,7 @@ document.getElementById("read").onclick = function () {
     .database()
     .ref("student/" + uidV)
     .on("value", function (snap) {
-      document.getElementById("uid").value = snap.val().idNo;
+      document.getElementById("uid").value = snap.val().uid;
       document.getElementById("firstname").value = snap.val().firstname;
       document.getElementById("mid").value = snap.val().mid;
       document.getElementById("address").value = snap.val().address;
@@ -57,7 +57,7 @@ document.getElementById("update").onclick = function () {
     .database()
     .ref("student/" + uidV)
     .update({
-      //   idNo: uidV,
+      //   uid: uidV,
       firstname: firstnameV,
       mid: midV,
       address: addressV,
